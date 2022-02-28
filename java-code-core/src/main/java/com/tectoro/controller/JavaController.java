@@ -12,6 +12,7 @@ import com.tectoro.service.ServiceInterface;
 
 @RestController
 public class JavaController {
+	
 	@Autowired
 	ServiceInterface serviceInterface;
 	//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
