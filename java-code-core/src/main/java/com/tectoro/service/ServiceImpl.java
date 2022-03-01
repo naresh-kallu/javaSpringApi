@@ -46,6 +46,42 @@ public class ServiceImpl implements ServiceInterface {
 		
 		
 	}
+
+	@Override
+	public String greatNumber(int num, int num1) {
+		if(num>num1) {
+			return "Big number::"+num;
+		}else {
+			return "Big number::"+num1;
+		}
+		
+	}
+
+	@Override
+	public String bigNumLis(int num, int num1, int num2) {
+		if(num>=num1 && num>=num2) {
+			return "Big number::"+num;
+		}else if (num1>=num && num1>=num2) {
+			return "Big number::"+num1;
+		}else if (num2>=num && num2>=num1) {
+			return "Big number::"+num2;
+		}else {
+			return "Not a valid num";
+		}
+		
+	}
+
+	@Override
+	public String lYear(int year) {
+		if(year % 400 == 0) {
+			return "leap year::"+year;
+		}else if (year % 400 ==0 && year %100 !=0) {
+			return "Leap year ::"+year;
+		}else {
+			return "Not a leap year::"+year;
+		}
+		
+	}
 	
 
 }

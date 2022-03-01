@@ -32,20 +32,34 @@ public class JavaController {
 	public String n_Num(JavaEntity entity) {
 		int num=entity.getNum();
 		int num1=entity.getNum1();
-		
-		
-		return serviceInterface.first_N_Num(num) ;
-		
+		return serviceInterface.first_N_Num(num);
 	}
 	@PostMapping("/n_range")
 	public String n_range(@RequestBody JavaEntity entity) {
 		int num=entity.getNum();
 		int num1=entity.getNum1();
-		
-		
-	
 	return serviceInterface.first_N_range(num, num1);
 	
+	}
+	@PostMapping("/greatnum")
+	public String greatNum(@RequestBody JavaEntity entity) {
+		int num=entity.getNum();
+		int num1=entity.getNum1();
+		return serviceInterface.greatNumber(num, num1);
+		
+	}
+	@PostMapping("/great")
+	public String bigNum(@RequestBody JavaEntity entity) {
+		int num=entity.getNum();
+		int num1=entity.getNum1();
+		int num2=entity.getNum2();
+		return serviceInterface.bigNumLis(num, num1, num2);
+		
+	}
+	@PostMapping("/leapyear")
+	public String leapYear(@RequestBody JavaEntity entity) {
+		int year=entity.getYear();
+		return serviceInterface.lYear(year);
 	}
 
 }
