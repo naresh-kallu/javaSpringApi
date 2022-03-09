@@ -1,16 +1,24 @@
 package com.tectoro.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.tectoro.entity.JavaEntity;
+import com.tectoro.repository.RepositoryInt;
 
 @Service
 public class ServiceImpl implements ServiceInterface {
+	@Autowired
+	private RepositoryInt int1;
 
 	@Override
-	public String positiveOrNagitive(int num) {
-		if(num > 0) {
-		return	"Positive Number::"+num;
+	public String positiveOrNagitive(int num,JavaEntity entity) {
+		if(num >= 0) {
+			entity.setResult("positive");
+		return	"Positive Number::"+num+" "+int1.save(entity);
 		}else {
-		return	"Nagitive num::"+num;
+			entity.setResult("Negative");
+		return	"Nagitive num::"+num+" "+int1.save(entity);
 		}
 		
 	}
@@ -73,15 +81,29 @@ public class ServiceImpl implements ServiceInterface {
 
 	@Override
 	public String lYear(int year) {
-		if(year % 400 == 0) {
+		if((year % 400 == 0) ||(year % 400 ==0 && year %100 !=0)) {
 			return "leap year::"+year;
-		}else if (year % 400 ==0 && year %100 !=0) {
-			return "Leap year ::"+year;
-		}else {
+		} /*
+			 * else if (year % 400 ==0 && year %100 !=0) { return "Leap year ::"+year; }
+			 */
+		else {
 			return "Not a leap year::"+year;
 		}
 		
 	}
+
+	@Override
+	public String prime(int num) {
+		int count=0;
+		if(num<2) {
+			return "Not a prime num::"+num;
+		}
+			
+		return null;
+	}
+
+	
+	
 	
 
 }

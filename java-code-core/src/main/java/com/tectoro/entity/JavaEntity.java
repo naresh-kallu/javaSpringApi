@@ -1,12 +1,29 @@
 package com.tectoro.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class JavaEntity {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private int num;
 	private int num1;
 	private int num2;
 	private int year;
+	private String result;
 	
+	
+	public String getResult() {
+		return result;
+	}
+	public void setResult(String result) {
+		this.result = result;
+	}
 	public int getYear() {
 		return year;
 	}

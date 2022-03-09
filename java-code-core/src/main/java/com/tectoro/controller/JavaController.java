@@ -20,7 +20,7 @@ public class JavaController {
 	@PostMapping("/positive")
 	public String posOrNeg(JavaEntity entity) {
 		int num=entity.getNum();
-	 return 	serviceInterface.positiveOrNagitive(num);
+	 return 	serviceInterface.positiveOrNagitive(num,entity);
 	}
 	@PostMapping("/even")
 	public String evenOrOdd(JavaEntity entity) {
